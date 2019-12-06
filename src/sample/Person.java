@@ -1,5 +1,6 @@
 package sample;
 
+import java.io.InputStream;
 import java.io.Serializable;
 
 /**
@@ -13,6 +14,7 @@ public class Person implements Serializable {
     private String username;
     private String password;
     private String phone;
+    private Integer id;
 
     public String getUsername() {
         return username;

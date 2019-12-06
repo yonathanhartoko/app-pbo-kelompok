@@ -7,12 +7,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 
 import javax.swing.*;
 import java.awt.*;
@@ -42,28 +40,35 @@ public class RegisterFormController implements Initializable {
     public Button register;
     public Button back;
     public Button profilepic1;
-    public FileChooser fileChooser;
-    public BufferedImage bf;
     public File file;
-
+    public Desktop desktop = Desktop.getDesktop();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        FileChooser fileChooser = new FileChooser();
+        FileChooser.ExtensionFilter ext1 = new FileChooser.ExtensionFilter("JPG files(*.jpg)","*.JPG");
+        FileChooser.ExtensionFilter ext2 = new FileChooser.ExtensionFilter("PNG files(*.png)","*.PNG");
+        fileChooser.getExtensionFilters().addAll(ext1,ext2);
+
         profilepic1.setOnAction((ActionEvent t) -> {
-            Stage stage = (Stage) profilepic1.getScene().getWindow();
-            Pane bp = new VBox(12);
-            Scene scene = new Scene(bp);
-            stage.setScene(scene);
-            stage.setTitle("Insert Image Into Database");
-            stage.show();
-            Button profilepic1 = new Button("Open a Picture...");
-            FileChooser fileChooser = new FileChooser();
-            FileChooser.ExtensionFilter ext1 = new FileChooser.ExtensionFilter("JPG files(*.jpg)","*.JPG");
-            FileChooser.ExtensionFilter ext2 = new FileChooser.ExtensionFilter("PNG files(*.png)","*.PNG");
-            fileChooser.getExtensionFilters().addAll(ext1,ext2);
-            File file = fileChooser.showOpenDialog(stage);
+            //Button profilepic1 = new Button("Open a Picture...");
+            Stage picstage = (Stage) profilepic1.getScene().getWindow();
+            file = fileChooser.showOpenDialog(picstage);
         });
+
+//        final GridPane inputGridPane = new GridPane();
+//        GridPane.setConstraints(profilepic1, 0, 1);
+//        inputGridPane.setHgap(6);
+//        inputGridPane.setVgap(6);
+//        inputGridPane.getChildren().addAll(profilepic1);
+//        Pane abc = new VBox(12);
+//        abc.getChildren().addAll(inputGridPane);
+//        //abc.setPadding(new Insets(12, 12, 12, 12));
+//
+//        picstage.setScene(new Scene(abc));
+//        picstage.setTitle("Insert Image Into Database");
+//        picstage.show();
 
         register.setOnAction(event -> {
             Stage stage = (Stage) register.getScene().getWindow();
@@ -85,7 +90,7 @@ public class RegisterFormController implements Initializable {
                     preparedStatement.setString(1, person.getUsername());
                     preparedStatement.setString(2, person.getPassword());
                     preparedStatement.setString(3, person.getPhone());
-                    preparedStatement.setBinaryStream(4, fin);
+                    preparedStatement.setBinaryStream(4, fin, (int)(file.length()));
                     preparedStatement.execute();
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -112,5 +117,15 @@ public class RegisterFormController implements Initializable {
                 stage.setScene(scene);
             } catch (Exception ignored) {}
         });
+    }
+
+    private void openFile() {
+        try {
+            desktop.open(file);
+        } catch (IOException ex) {
+            Logger.getLogger(RegisterFormController.class.getName()).log(
+                    Level.SEVERE, null, ex
+            );
+        }
     }
 }
