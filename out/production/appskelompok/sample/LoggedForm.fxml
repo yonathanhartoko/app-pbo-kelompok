@@ -7,28 +7,39 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #7FFFD4;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoggedFormController">
+<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #7FFFD4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoggedFormController">
    <children>
       <AnchorPane layoutX="789.0" layoutY="70.0" prefHeight="628.0" prefWidth="545.0" style="-fx-background-color: #5F9EA0;">
          <children>
-            <TextField layoutX="41.0" layoutY="236.0" prefHeight="55.0" prefWidth="454.0" promptText="User ID / Email" fx:id="username">
+            <TextField fx:id="username" layoutX="41.0" layoutY="171.0" prefHeight="55.0" prefWidth="454.0" promptText="User ID / Email">
                <font>
                   <Font size="22.0" />
                </font></TextField>
-            <PasswordField layoutX="41.0" layoutY="343.0" prefHeight="55.0" prefWidth="454.0" promptText="Password" fx:id="password">
+            <PasswordField fx:id="password" layoutX="41.0" layoutY="278.0" prefHeight="55.0" prefWidth="454.0" promptText="Password">
                <font>
                   <Font size="22.0" />
                </font></PasswordField>
-            <Button layoutX="378.0" layoutY="499.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" style="-fx-background-color: #B0C4DE;" text="Sign in" textFill="#606797" fx:id="signIn">
+            <Button fx:id="signIn" layoutX="378.0" layoutY="382.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" style="-fx-background-color: #B0C4DE;" text="Sign in" textFill="#606797">
                <font>
                   <Font name="Arial Bold" size="18.0" />
                </font>
             </Button>
-            <Label layoutX="197.0" layoutY="105.0" prefHeight="62.0" prefWidth="152.0" text="Sign in" textFill="WHITE">
+            <Label layoutX="197.0" layoutY="40.0" prefHeight="62.0" prefWidth="152.0" text="Sign in" textFill="WHITE">
                <font>
                   <Font name="Calibri" size="53.0" />
                </font>
             </Label>
+            <TextField fx:id="finduser" layoutX="41.0" layoutY="488.0" prefHeight="55.0" prefWidth="454.0" promptText="Search User">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </TextField>
+            <Label fx:id="searchresult" layoutX="41.0" layoutY="560.0" />
+            <Button fx:id="search" layoutX="378.0" layoutY="494.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" style="-fx-background-color: #B0C4DE;" text="Search" textFill="#606797">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
       <Label layoutX="24.0" layoutY="73.0" text="WELCOME TO OUR APPLICATION" textFill="#34794b">
@@ -53,7 +64,7 @@
          <font>
             <Font size="24.0" />
          </font></Label>
-      <Label layoutX="118.0" layoutY="400.0" text="Ferrel Jhon Fernando">
+      <Label layoutX="118.0" layoutY="400.0" text="Ferrel John Fernando">
          <font>
             <Font size="24.0" />
          </font></Label>
@@ -81,7 +92,7 @@
          <font>
             <Font size="24.0" />
          </font></Label>
-      <Button layoutX="477.0" layoutY="594.0" mnemonicParsing="false" prefHeight="96.0" prefWidth="206.0" style="-fx-background-color: #5F9EA0;" text="Sign Up" textFill="#e3e4eb" fx:id="signUp">
+      <Button fx:id="signUp" layoutX="477.0" layoutY="594.0" mnemonicParsing="false" prefHeight="96.0" prefWidth="206.0" style="-fx-background-color: #5F9EA0;" text="Sign Up" textFill="#e3e4eb">
          <font>
             <Font name="Arial Bold" size="33.0" />
          </font>

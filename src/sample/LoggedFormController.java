@@ -3,18 +3,13 @@ package sample;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ResourceBundle;
 
 /**
@@ -26,9 +21,14 @@ import java.util.ResourceBundle;
  */
 public class LoggedFormController implements Initializable {
     public TextField username;
+    public TextField finduser;
     public PasswordField password;
     public Button signIn;
     public Button signUp;
+    public Button search;
+    public Label searchresult;
+    public Integer count;
+    public String user;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -39,6 +39,28 @@ public class LoggedFormController implements Initializable {
                 Scene scene = new Scene(page);
                 stage.setScene(scene);
             } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+        search.setOnAction(event -> {
+            Connection connection = DataHelper.connect();
+            try {
+                Statement statement = connection.createStatement();
+                String query = "SELECT COUNT (*) AS total FROM mercubuana.public.user WHERE name LIKE '%"+finduser.getText()+"%'";
+                ResultSet resultSet = statement.executeQuery(query);
+                while (resultSet.next()){
+                    count = resultSet.getInt("total");
+                }
+                Alert alert;
+                if (count == 0) {
+                    alert = new Alert(Alert.AlertType.INFORMATION, "No user found!");
+                    alert.show();
+                } else {
+                    alert = new Alert(Alert.AlertType.INFORMATION, count+" user found!");
+                    alert.show();
+                }
+            } catch (SQLException e) {
                 e.printStackTrace();
             }
         });
@@ -80,12 +102,13 @@ public class LoggedFormController implements Initializable {
                     alert.show();
                 } else {
                     try {
+                        user = username.getText();
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("InitialForm.fxml"));
                         stage.setScene(new Scene(
                                 loader.load()
                         ));
                         InitialFormController controller = loader.getController();
-                        controller.greeting.setText("Selamat datang, " + person.getUsername());
+                        controller.greeting.setText(person.getUsername());
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

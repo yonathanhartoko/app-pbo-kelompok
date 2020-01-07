@@ -34,32 +34,33 @@ public class InitialFormController implements Initializable {
     public Button logout;
     public Label greeting;
     public Button video;
-    public File vid;
+    public File pic;
+    LoggedFormController refA;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        FileChooser fileChooser = new FileChooser();
-        FileChooser.ExtensionFilter ext1 = new FileChooser.ExtensionFilter("JPG files(*.jpg)","*.JPG");
-        fileChooser.getExtensionFilters().addAll(ext1);
-
-        video.setOnAction(event -> {
-            Stage vidstage = (Stage) video.getScene().getWindow();
-            vid = fileChooser.showOpenDialog(vidstage);
-            BufferedImage bufferedImage;
-            try {
-                bufferedImage = ImageIO.read(vid);
-                File filepath = new File("picture.jpg");
-                ImageIO.write(bufferedImage, "JPG", filepath);
-                String insertData = "INSERT INTO mercubuana.public.media(media_path) VALUES(?)";
-                Connection connection = DataHelper.connect();
-                PreparedStatement preparedStatement = new prepareStatement(insertData);
-                preparedStatement.setString(1, filepath.getAbsolutePath());
-                preparedStatement.execute();
-            } catch (IOException | SQLException e) {
-                e.printStackTrace();
-            }
-        });
-
+//        FileChooser fileChooser = new FileChooser();
+////        FileChooser.ExtensionFilter ext1 = new FileChooser.ExtensionFilter("JPG files(*.jpg)","*.JPG");
+////        fileChooser.getExtensionFilters().addAll(ext1);
+////
+////        video.setOnAction(event -> {
+////            Stage vidstage = (Stage) video.getScene().getWindow();
+////            pic = fileChooser.showOpenDialog(vidstage);
+////            BufferedImage bufferedImage;
+////            try {
+////                bufferedImage = ImageIO.read(pic);
+////                File filepath = new File("picture.jpg");
+////                ImageIO.write(bufferedImage, "JPG", filepath);
+////                String insertData = "INSERT INTO mercubuana.public.media(media_path) VALUES(?)";
+////                Connection connection = DataHelper.connect();
+////                PreparedStatement preparedStatement = connection.prepareStatement(insertData);
+////                preparedStatement.setString(1, filepath.getAbsolutePath());
+////                preparedStatement.execute();
+////            } catch (IOException | SQLException e) {
+////                e.printStackTrace();
+////            }
+////        });
+        System.out.println(refA.username.getText());
         logout.setOnAction(event -> {
             Stage stage = (Stage) logout.getScene().getWindow();
             try {
