@@ -23,6 +23,8 @@ public class LoggedFormController implements Initializable {
     public TextField username;
     public TextField finduser;
     public PasswordField password;
+    public MenuItem help1;
+    public MenuItem help2;
     public Button signIn;
     public Button signUp;
     public Button search;
@@ -32,6 +34,28 @@ public class LoggedFormController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        help1.setOnAction(event -> {
+            Stage stage = (Stage) signUp.getScene().getWindow();
+            try {
+                AnchorPane pane = FXMLLoader.load(getClass().getResource("signinhelp.fxml"));
+                Scene scene = new Scene(pane);
+                stage.setScene(scene);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+        help2.setOnAction(event -> {
+            Stage stage = (Stage) signUp.getScene().getWindow();
+            try {
+                AnchorPane pane = FXMLLoader.load(getClass().getResource("signuphelp.fxml"));
+                Scene scene = new Scene(pane);
+                stage.setScene(scene);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
         signUp.setOnAction(event -> {
             Stage stage = (Stage) signUp.getScene().getWindow();
             try {
@@ -101,14 +125,23 @@ public class LoggedFormController implements Initializable {
                     alert = new Alert(Alert.AlertType.ERROR, "Username/Password not match!");
                     alert.show();
                 } else {
+                    String query2 = "INSERT INTO mercubuana.public.session(username) VALUES(?)";
+                    try (Connection connection2 = DataHelper.connect();
+                         PreparedStatement preparedStatement = connection2.prepareStatement(query2)){
+                        preparedStatement.setString(1, person.getUsername());
+                        preparedStatement.execute();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        System.out.println(e.getMessage());
+                    }
+
                     try {
-                        user = username.getText();
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("InitialForm.fxml"));
                         stage.setScene(new Scene(
                                 loader.load()
                         ));
                         InitialFormController controller = loader.getController();
-                        controller.greeting.setText(person.getUsername());
+//                        controller.greeting.setText(person.getUsername());
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

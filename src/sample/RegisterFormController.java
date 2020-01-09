@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
 import javafx.stage.FileChooser;
@@ -36,6 +37,8 @@ import java.util.logging.Logger;
 public class RegisterFormController implements Initializable {
     public TextField username;
     public PasswordField password;
+    public MenuItem help1;
+    public MenuItem help2;
     public TextField phone;
     public Button register;
     public Button back;
@@ -45,6 +48,27 @@ public class RegisterFormController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        help1.setOnAction(event -> {
+            Stage stage = (Stage) back.getScene().getWindow();
+            try {
+                AnchorPane pane = FXMLLoader.load(getClass().getResource("signinhelp.fxml"));
+                Scene scene = new Scene(pane);
+                stage.setScene(scene);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+        help2.setOnAction(event -> {
+            Stage stage = (Stage) back.getScene().getWindow();
+            try {
+                AnchorPane pane = FXMLLoader.load(getClass().getResource("signuphelp.fxml"));
+                Scene scene = new Scene(pane);
+                stage.setScene(scene);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
 
         FileChooser fileChooser = new FileChooser();
         FileChooser.ExtensionFilter ext1 = new FileChooser.ExtensionFilter("JPG files(*.jpg)","*.JPG");
@@ -56,19 +80,6 @@ public class RegisterFormController implements Initializable {
             Stage picstage = (Stage) profilepic1.getScene().getWindow();
             file = fileChooser.showOpenDialog(picstage);
         });
-
-//        final GridPane inputGridPane = new GridPane();
-//        GridPane.setConstraints(profilepic1, 0, 1);
-//        inputGridPane.setHgap(6);
-//        inputGridPane.setVgap(6);
-//        inputGridPane.getChildren().addAll(profilepic1);
-//        Pane abc = new VBox(12);
-//        abc.getChildren().addAll(inputGridPane);
-//        //abc.setPadding(new Insets(12, 12, 12, 12));
-//
-//        picstage.setScene(new Scene(abc));
-//        picstage.setTitle("Insert Image Into Database");
-//        picstage.show();
 
         register.setOnAction(event -> {
             Stage stage = (Stage) register.getScene().getWindow();

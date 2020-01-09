@@ -18,9 +18,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ResourceBundle;
 
 /**
@@ -34,8 +32,9 @@ public class InitialFormController implements Initializable {
     public Button logout;
     public Label greeting;
     public Button video;
-    public File pic;
-    LoggedFormController refA;
+    public Integer count;
+    public String username;
+//    public File pic;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -60,7 +59,25 @@ public class InitialFormController implements Initializable {
 ////                e.printStackTrace();
 ////            }
 ////        });
-        System.out.println(refA.username.getText());
+        Connection connection = DataHelper.connect();
+        try {
+            Statement statement = connection.createStatement();
+            String query = "SELECT COUNT (*) AS total FROM mercubuana.public.session";
+            ResultSet resultSet = statement.executeQuery(query);
+            while (resultSet.next()){
+                count = resultSet.getInt("total");
+            }
+            String getuser = "SELECT username FROM mercubuana.public.session WHERE id='"+count+"'";
+            ResultSet hasil = statement.executeQuery(getuser);
+            while (hasil.next()){
+                username = hasil.getString("username");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        greeting.setText(username);
+
         logout.setOnAction(event -> {
             Stage stage = (Stage) logout.getScene().getWindow();
             try {
