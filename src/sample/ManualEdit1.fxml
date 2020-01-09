@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="715.0" prefWidth="767.0" style="-fx-background-color: #7FFFD4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ManualEdit1Controller">
+   <children>
+      <Button fx:id="manlogin" layoutX="14.0" layoutY="129.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="167.0" style="-fx-background-color: #5F9EA0;" text="Login" textFill="#e3e4eb">
+         <font>
+            <Font name="Arial Bold" size="22.0" />
+         </font>
+      </Button>
+      <Button fx:id="mandaftar" layoutX="300.0" layoutY="129.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="167.0" style="-fx-background-color: #5F9EA0;" text="Daftar" textFill="#e3e4eb">
+         <font>
+            <Font name="Arial Bold" size="22.0" />
+         </font>
+      </Button>
+      <Button fx:id="manedit" layoutX="586.0" layoutY="129.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="167.0" style="-fx-background-color: #5F9EA0;" text="Edit Profile" textFill="#e3e4eb" wrapText="true">
+         <font>
+            <Font name="Arial Bold" size="22.0" />
+         </font>
+      </Button>
+      <Label layoutX="38.0" layoutY="30.0" text="CARA MENGGUNAKAN APLIKASI" textFill="#34794b">
+         <font>
+            <Font name="Arial" size="44.0" />
+         </font>
+      </Label>
+      <Label layoutX="300.0" layoutY="214.0" text="Edit Profile">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Label>
+      <Label layoutX="63.0" layoutY="273.0" prefHeight="52.0" prefWidth="613.0" text="1. Sebelum melakukan pengeditan pada profil, login terlebih dahulu ke dalam aplikasi menggunakan user yang dimiliki." wrapText="true">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="64.0" layoutY="325.0" prefHeight="52.0" prefWidth="632.0" text="2. Setelah login, user akan diperlihatkan halaman utama aplikasi. Pada bagian kiri aplikasi terdapat tombol Edit Profile. Klik tombol tersebut untuk mengedit profil." wrapText="true">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="301.0" fitWidth="478.0" layoutX="84.0" layoutY="377.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/Screenshot_7.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="292.0" layoutY="82.0" prefHeight="30.0" prefWidth="184.0" text="Ditulis oleh : Yonathan Hartoko" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Button fx:id="next" layoutX="668.0" layoutY="641.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="85.0" style="-fx-background-color: #5F9EA0;" text="Next" textFill="#e3e4eb">
+         <font>
+            <Font name="Arial Bold" size="22.0" />
+         </font>
+      </Button>
+      <Button fx:id="back" layoutX="301.0" layoutY="641.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="167.0" style="-fx-background-color: #5F9EA0;" text="Back" textFill="#e3e4eb">
+         <font>
+            <Font name="Arial Bold" size="22.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

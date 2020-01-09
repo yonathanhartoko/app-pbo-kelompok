@@ -32,6 +32,7 @@ public class InitialFormController implements Initializable {
     public Button logout;
     public Label greeting;
     public Button video;
+    public Button editbtn;
     public Integer count;
     public String username;
 //    public File pic;
@@ -82,6 +83,17 @@ public class InitialFormController implements Initializable {
             Stage stage = (Stage) logout.getScene().getWindow();
             try {
                 AnchorPane page = FXMLLoader.load(getClass().getResource("LoggedForm.fxml"));
+                Scene scene = new Scene(page);
+                stage.setScene(scene);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+        editbtn.setOnAction(event -> {
+            Stage stage = (Stage) editbtn.getScene().getWindow();
+            try {
+                AnchorPane page = FXMLLoader.load(getClass().getResource("EditProfile.fxml"));
                 Scene scene = new Scene(page);
                 stage.setScene(scene);
             } catch (IOException e) {

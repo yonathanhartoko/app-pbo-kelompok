@@ -75,5 +75,10 @@
             <Font name="Arial Bold" size="18.0" />
          </font>
       </Button>
+      <Button fx:id="editbtn" layoutX="79.0" layoutY="104.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="143.0" style="-fx-background-color: #B0C4DE;" text="Edit Profile" textFill="#606797">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

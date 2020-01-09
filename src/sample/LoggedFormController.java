@@ -28,6 +28,7 @@ public class LoggedFormController implements Initializable {
     public Button signIn;
     public Button signUp;
     public Button search;
+    public Button manual;
     public Label searchresult;
     public Integer count;
     public String user;
@@ -146,6 +147,17 @@ public class LoggedFormController implements Initializable {
                         e.printStackTrace();
                     }
                 }
+            }
+        });
+
+        manual.setOnAction(event -> {
+            Stage stage = (Stage) manual.getScene().getWindow();
+            try {
+                AnchorPane page = FXMLLoader.load(getClass().getResource("ManualLogin1.fxml"));
+                Scene scene = new Scene(page);
+                stage.setScene(scene);
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         });
     }

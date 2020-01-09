@@ -2,19 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1e3c8d9-20c1-402d-bd98-f9e7a5369ea6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/sample/signinhelp.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/signinhelpController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/signuphelp.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/signuphelpController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/EditProfileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/ManualDaftar1.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/ManualDaftar1Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/ManualDaftar2.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/ManualDaftar2Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/ManualDaftar3.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/ManualDaftar3Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/ManualDaftar4.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/ManualDaftar4Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/ManualEdit1.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/ManualEdit1Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/ManualEdit2.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/ManualEdit2Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/ManualEdit3.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/ManualEdit3Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/ManualLogin1.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/ManualLogin1Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/ManualLogin2.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/ManualLogin2Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/appskelompok.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/appskelompok.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/appskelompok/sample/EditProfile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/appskelompok/sample/EditProfile.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/appskelompok/sample/EditProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/appskelompok/sample/EditProfileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/appskelompok/sample/InitialForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/appskelompok/sample/InitialForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/appskelompok/sample/InitialFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/appskelompok/sample/InitialFormController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/appskelompok/sample/LoggedForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/appskelompok/sample/LoggedForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/appskelompok/sample/LoggedFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/appskelompok/sample/LoggedFormController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/EditProfileController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/appskelompok/sample/RegisterForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/appskelompok/sample/RegisterForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/appskelompok/sample/RegisterFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/appskelompok/sample/RegisterFormController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/EditProfile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/EditProfile.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/InitialForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/InitialForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/InitialFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/InitialFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/LoggedForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/LoggedForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/LoggedFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/LoggedFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/RegisterForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/RegisterForm.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/RegisterFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/RegisterFormController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +60,9 @@
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1Tyw50OJk8RwFmGSla989OGBaTm" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -113,7 +137,7 @@
       <workItem from="1577498835732" duration="112000" />
       <workItem from="1578143846247" duration="16361000" />
       <workItem from="1578467699089" duration="6517000" />
-      <workItem from="1578550743048" duration="4862000" />
+      <workItem from="1578550743048" duration="14763000" />
     </task>
     <servers />
   </component>

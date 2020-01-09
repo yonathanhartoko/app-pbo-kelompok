@@ -7,24 +7,24 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #7FFFD4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.RegisterFormController">
+<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #7FFFD4;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.EditProfileController">
    <children>
       <AnchorPane layoutX="789.0" layoutY="70.0" prefHeight="628.0" prefWidth="545.0" style="-fx-background-color: #5F9EA0;">
          <children>
-            <TextField fx:id="username" layoutX="41.0" layoutY="236.0" prefHeight="55.0" prefWidth="454.0" promptText="Username">
+            <TextField fx:id="editusername" layoutX="41.0" layoutY="236.0" prefHeight="55.0" prefWidth="454.0" promptText="Username">
                <font>
                   <Font size="22.0" />
                </font></TextField>
-            <PasswordField fx:id="password" layoutX="41.0" layoutY="314.0" prefHeight="55.0" prefWidth="454.0" promptText="Password">
+            <PasswordField fx:id="editpassword" layoutX="41.0" layoutY="314.0" prefHeight="55.0" prefWidth="454.0" promptText="Password">
                <font>
                   <Font size="22.0" />
                </font></PasswordField>
-            <TextField fx:id="phone" layoutX="41.0" layoutY="389.0" prefHeight="55.0" prefWidth="454.0" promptText="Phone Number">
+            <TextField fx:id="editphone" layoutX="41.0" layoutY="389.0" prefHeight="55.0" prefWidth="454.0" promptText="Phone Number">
                <font>
                   <Font size="22.0" />
                </font>
             </TextField>
-            <Button fx:id="register" layoutX="384.0" layoutY="499.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" style="-fx-background-color: #B0C4DE;" text="Register" textFill="#606797">
+            <Button fx:id="update" layoutX="384.0" layoutY="499.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" style="-fx-background-color: #B0C4DE;" text="Update" textFill="#606797">
                <font>
                   <Font name="Arial Bold" size="18.0" />
                </font>
@@ -34,11 +34,6 @@
                   <Font name="Calibri" size="53.0" />
                </font>
             </Label>
-            <Button fx:id="profilepic1" layoutX="41.0" layoutY="499.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="215.0" style="-fx-background-color: #B0C4DE;" text="Upload Profile Picture" textFill="#606797">
-               <font>
-                  <Font name="Arial Bold" size="18.0" />
-               </font>
-            </Button>
          </children>
       </AnchorPane>
       <Label layoutX="24.0" layoutY="73.0" text="UPDATE ACCOUNT" textFill="#34794b">

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #7FFFD4;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.signinhelpController">
+   <children>
+      <Button fx:id="back" layoutX="1130.0" layoutY="46.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="171.0" style="-fx-background-color: #5F9EA0;" text="Back " textFill="#e3e4eb">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Button>
+      <Label fx:id="greeting" layoutX="443.0" layoutY="126.0">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="706.0" layoutY="126.0">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="79.0" layoutY="201.0" prefHeight="171.0" prefWidth="1051.0" style="-fx-background-color: #FFA07A;">
+         <children>
+            <Label layoutX="14.0" layoutY="24.0" prefHeight="30.0" prefWidth="739.0" text="1. In the main menu, there are 2 columns namely user name and password">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="44.0" prefHeight="47.0" prefWidth="1000.0" text="2. Enter the username in the username and password field if the password is already registered" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="75.0" prefHeight="47.0" prefWidth="1000.0" text="3. If not registered as a user, click the Sign Up button" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="106.0" prefHeight="47.0" prefWidth="1000.0" text="4. After filling in your username and password, click the Sign In button to enter the application" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label layoutX="79.0" layoutY="126.0" text="List step by step">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
